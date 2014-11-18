@@ -5,7 +5,7 @@ android {
     buildToolsVersion "19.1.0"
 
     defaultConfig {
-        applicationId "com.seanfreiburg.simpletodo"
+        applicationId "com.seanfreiburg.easytodo"
         minSdkVersion 21
         targetSdkVersion 21
         versionCode 1
