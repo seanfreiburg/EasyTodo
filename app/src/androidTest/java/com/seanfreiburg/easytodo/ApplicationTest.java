@@ -1,4 +1,4 @@
-package com.seanfreiburg.simpletodo;
+package com.seanfreiburg.easytodo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
