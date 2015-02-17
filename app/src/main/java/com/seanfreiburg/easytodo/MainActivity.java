@@ -3,7 +3,6 @@ package com.seanfreiburg.easytodo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,18 +25,14 @@ public class MainActivity extends Activity {
     private ListView lvItems;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // ADD HERE
         lvItems = (ListView) findViewById(R.id.lvItems);
-        items = new ArrayList<String>();
+        items = new ArrayList<>();
         readItems();
-        itemsAdapter = new ArrayAdapter<String>(this,
+        itemsAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
 
@@ -74,7 +69,7 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.activity_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 this.startActivity(intent);
@@ -98,9 +93,9 @@ public class MainActivity extends Activity {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try {
-            items = new ArrayList<String>(FileUtils.readLines(todoFile));
+            items = new ArrayList<>(FileUtils.readLines(todoFile));
         } catch (IOException e) {
-            items = new ArrayList<String>();
+            items = new ArrayList<>();
         }
     }
 
